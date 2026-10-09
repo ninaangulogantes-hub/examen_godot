@@ -14,6 +14,9 @@ size = Vector2(125, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vicex"]
 size = Vector2(17, 125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77to7"]
+size = Vector2(141, 25)
+
 [node name="Node2D" type="Node2D" unique_id=2052313851]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1343658042]
@@ -52,4 +55,11 @@ target_position = Vector2(-97, -4)
 position = Vector2(-68.5, 0.5)
 shape = SubResource("RectangleShape2D_vicex")
 
+[node name="Area2D2" type="Area2D" parent="Enemigo" unique_id=1945890359]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo/Area2D2" unique_id=1694986889]
+position = Vector2(-5.5, -73.5)
+shape = SubResource("RectangleShape2D_77to7")
+
 [connection signal="body_entered" from="Enemigo/Area2D" to="Enemigo" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemigo/Area2D2" to="Enemigo" method="_on_area_2d_2_body_entered"]
